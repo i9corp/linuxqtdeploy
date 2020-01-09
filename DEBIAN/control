@@ -1,8 +1,0 @@
-Package: linuxdeployqt
-Priority: optional
-Section: devel
-Maintainer: I9CORP <repo@i9corp.com.br>
-Architecture: amd64
-Version: 1.0.0
-Depends: fuse
-Description: Pacote para instalação do utilitário linuxdeployqt.
