@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+chmod +x /usr/local/bin/linuxdeployqt
+
+exit 0
