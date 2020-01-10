@@ -34,10 +34,12 @@ set -e
 /bin/echo "OK!"
 
 /bin/echo "Creating package structure and files ..."
+/bin/mkdir -p ${DIST_DIR}
+/bin/mkdir -p ${BUILD_DIR}
+/bin/mkdir -p ${BASE_DIR}
 /bin/mkdir -p ${STAGE_DIR}/DEBIAN
 /bin/mkdir -p ${STAGE_DIR}/usr/local/bin
 /usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/linuxdeployqt ${STAGE_DIR}/usr/local/bin/
-/bin/mkdir -p ${BASE_DIR}
 
 /bin/cat >> ${STAGE_DIR}/DEBIAN/control <<EOF
 Package: linuxdeployqt
