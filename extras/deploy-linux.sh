@@ -72,6 +72,8 @@ echo "Ok!"
 /bin/echo "Changing permissions ..."
 # /usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/dist/* ${BASE_DIR}/
 /bin/chmod 755 ${STAGE_DIR}/DEBIAN/control
+/bin/chmod 755 ${STAGE_DIR}/DEBIAN/postinst
+/bin/chmod 755 ${STAGE_DIR}/DEBIAN/prerm
 /bin/echo "Ok!"
 
 echo "Creating package..."
