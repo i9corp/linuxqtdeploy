@@ -69,8 +69,8 @@ exit 0
 EOF
 echo "Ok!"
 
-/bin/echo "Copying files and changing permissions ..."
-/usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/dist/* ${BASE_DIR}/
+/bin/echo "Changing permissions ..."
+# /usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/dist/* ${BASE_DIR}/
 /bin/chmod 755 ${STAGE_DIR}/DEBIAN/control
 /bin/echo "Ok!"
 
