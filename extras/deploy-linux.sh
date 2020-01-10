@@ -13,7 +13,7 @@ export PATH="${PATH}"
 
 cd ${PROJECT_DIR}
 
-STAGE_DIR=/tmp/linuxqtdeploy
+STAGE_DIR=/tmp/linuxdeployqt
 SCRIPT=$(readlink -f "$0")
 SCRIPT_PATH=$(dirname "$SCRIPT")
 DIST_DIR=${PROJECT_DIR}/dist
@@ -39,8 +39,8 @@ set -e
 /usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/linuxdeployqt ${STAGE_DIR}/usr/local/bin/
 /bin/mkdir -p ${BASE_DIR}
 
-/bin//bin/cat >> ${STAGE_DIR}/DEBIAN/control <<EOF
-Package: linuxqtdeploy
+/bin/cat >> ${STAGE_DIR}/DEBIAN/control <<EOF
+Package: linuxdeployqt
 Priority: extra
 Section: devel
 Maintainer: I9CORP <repo@i9corp.com.br>
