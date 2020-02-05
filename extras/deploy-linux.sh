@@ -39,7 +39,7 @@ set -e
 /bin/mkdir -p ${BASE_DIR}
 /bin/mkdir -p ${STAGE_DIR}/DEBIAN
 /bin/mkdir -p ${STAGE_DIR}/usr/local/bin
-/usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/linuxdeployqt ${STAGE_DIR}/usr/local/bin/
+/usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/linuxdeployqt-6 ${STAGE_DIR}/usr/local/bin/
 
 /bin/cat >> ${STAGE_DIR}/DEBIAN/control <<EOF
 Package: linuxdeployqt
@@ -55,22 +55,21 @@ echo "Architecture: ${ARCH}" >> ${STAGE_DIR}/DEBIAN/control
 /bin/cat >> ${STAGE_DIR}/DEBIAN/postinst <<EOF
 #!/bin/bash
 set -e
-chmod +x /usr/local/bin/linuxdeployqt
+chmod +x /usr/local/bin/linuxdeployqt-6
 exit 0
 EOF
 
 /bin/cat >> ${STAGE_DIR}/DEBIAN/prerm <<EOF
 #!/bin/bash
 set -e
-if [ -f /usr/local/bin/linuxdeployqt ]; then
-    rm -fr /usr/local/bin/linuxdeployqt
+if [ -f /usr/local/bin/linuxdeployqt-6 ]; then
+    rm -fr /usr/local/bin/linuxdeployqt-6
 fi
 exit 0
 EOF
 echo "Ok!"
 
 /bin/echo "Changing permissions ..."
-# /usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/dist/* ${BASE_DIR}/
 /bin/chmod 755 ${STAGE_DIR}/DEBIAN/control
 /bin/chmod 755 ${STAGE_DIR}/DEBIAN/postinst
 /bin/chmod 755 ${STAGE_DIR}/DEBIAN/prerm
