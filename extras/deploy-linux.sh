@@ -39,7 +39,7 @@ set -e
 /bin/mkdir -p ${BASE_DIR}
 /bin/mkdir -p ${STAGE_DIR}/DEBIAN
 /bin/mkdir -p ${STAGE_DIR}/usr/local/bin
-/usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/linuxdeployqt ${STAGE_DIR}/usr/local/bin/
+/usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/linuxdeployqt-6 ${STAGE_DIR}/usr/local/bin/linuxdeployqt
 
 /bin/cat >> ${STAGE_DIR}/DEBIAN/control <<EOF
 Package: linuxdeployqt
