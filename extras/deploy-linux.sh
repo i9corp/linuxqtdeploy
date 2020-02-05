@@ -39,7 +39,7 @@ set -e
 /bin/mkdir -p ${BASE_DIR}
 /bin/mkdir -p ${STAGE_DIR}/DEBIAN
 /bin/mkdir -p ${STAGE_DIR}/usr/local/bin
-/usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/linuxdeployqt-6 ${STAGE_DIR}/usr/local/bin/
+/usr/bin/sudo /bin/cp -rf ${PROJECT_DIR}/linuxdeployqt ${STAGE_DIR}/usr/local/bin/
 
 /bin/cat >> ${STAGE_DIR}/DEBIAN/control <<EOF
 Package: linuxdeployqt
@@ -55,7 +55,7 @@ echo "Architecture: ${ARCH}" >> ${STAGE_DIR}/DEBIAN/control
 /bin/cat >> ${STAGE_DIR}/DEBIAN/postinst <<EOF
 #!/bin/bash
 set -e
-chmod +x /usr/local/bin/linuxdeployqt-6
+chmod +x /usr/local/bin/linuxdeployqt
 exit 0
 EOF
 
@@ -63,7 +63,7 @@ EOF
 #!/bin/bash
 set -e
 if [ -f /usr/local/bin/linuxdeployqt-6 ]; then
-    rm -fr /usr/local/bin/linuxdeployqt-6
+    rm -fr /usr/local/bin/linuxdeployqt
 fi
 exit 0
 EOF
